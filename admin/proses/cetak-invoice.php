@@ -47,6 +47,7 @@ class InvoicePDF extends FPDF {
                 $this->SetFont('Arial', 'B', 12);
                 $this->Cell(20, 10, 'No', 1, 0, 'C');
                 $this->Cell(80, 10, 'Tiket', 1, 0, 'C');
+                $this->Cell(30, 10, 'Tanggal Pertandingan', 1, 0, 'C');
                 $this->Cell(30, 10, 'Jumlah', 1, 0, 'C');
                 $this->Cell(30, 10, 'Harga', 1, 0, 'C');
                 $this->Cell(50, 10, 'Total Harga', 1, 1, 'C');
@@ -63,6 +64,7 @@ class InvoicePDF extends FPDF {
                 while ($data = mysqli_fetch_assoc($result)) {
                     $this->Cell(20, 10, $no++, 1, 0, 'C');
                     $this->Cell(80, 10, $data["kompetisi"] . ' MATCH ANTARA ' . $data["club_1"] . ' vs ' . $data["club_2"], 1, 0);
+                    $this->Cell(30, 10, $data['tanggal_pertandingan'], 1, 0, 'C');
                     $this->Cell(30, 10, $data['jumlah_tiket'], 1, 0, 'C');
                     $this->Cell(30, 10, 'Rp ' . number_format($data['harga'], 0, ',', '.'), 1, 0, 'R');
                     $this->Cell(50, 10, 'Rp ' . number_format($data['total_harga'], 0, ',', '.'), 1, 1, 'R');

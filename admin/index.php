@@ -52,6 +52,7 @@
                     <li class="list-group-item list-group-item-action <?php echo (isset($_GET['page']) && $_GET['page'] == 'kelola-pesanan') ?>"><a href="index.php?page=kelola-pesanan">Kelola Pesanan</a></li>
                     <li class="list-group-item list-group-item-action <?php echo (isset($_GET['page']) && $_GET['page'] == 'kelola-pertandingan') ?>"><a href="index.php?page=kelola-pertandingan">Kelola Pertandingan</a></li>
                     <li class="list-group-item list-group-item-action <?php echo (isset($_GET['page']) && $_GET['page'] == 'kelola-user') ?>"><a href="index.php?page=kelola-user">Kelola User</a></li>
+                    <li class="list-group-item list-group-item-action <?php echo (isset($_GET['page']) && $_GET['page'] == 'laporan-penjualan') ?>"><a href="index.php?page=laporan-penjualan">Laporan penjualan</a></li>
                     <li class="list-group-item list-group-item-action"><a href="logout-admin.php">Logout</a></li>
                 </ul>
 
@@ -112,6 +113,9 @@
                         break;
                     case 'tambah-pertandingan':
                         include 'pages/tambah-pertandingan.php';
+                        break;
+                     case 'laporan-penjualan':
+                        include 'pages/laporan-penjualan.php';
                         break;
                     default:
                     if (isset($_GET['page']) && strpos($_GET['page'], 'pesanan') !== false) {
